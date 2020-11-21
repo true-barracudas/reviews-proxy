@@ -44,7 +44,7 @@ module.exports = {
   service1: {
     api: '/products/:id/trackpinch',
     url: 'http://localhost:3001',
-    bundle: 'bundle.js',
+    bundle: '/dist/bundle.js',
   },
   service2: {
     api: '/products/:id/sizepicker',
