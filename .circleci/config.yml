@@ -1,0 +1,75 @@
+version: 2.1
+executors:
+  docker-publisher:
+    environment:
+      IMAGE_NAME: meekoder/proxy
+    docker:
+      - image: circleci/buildpack-deps:stretch
+jobs:
+  build:
+    executor: docker-publisher
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            docker build -t $IMAGE_NAME:latest .
+      - run:
+          name: Archive Docker image
+          command: docker save -o image.tar $IMAGE_NAME
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./image.tar
+  publish-latest:
+    executor: docker-publisher
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - setup_remote_docker
+      - run:
+          name: Load archived Docker image
+          command: docker load -i /tmp/workspace/image.tar
+      - run:
+          name: Publish Docker Image to Docker Hub
+          command: |
+            echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+            docker push $IMAGE_NAME:latest
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 36:f7:82:49:ac:f6:80:da:d7:af:9b:32:be:2d:b8:3b
+      - run:
+          name: Deploy over SSH
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com bash -c '\
+            cd FEC
+            docker-compose down --rmi all -v
+            docker-compose pull
+            docker-compose up -d'
+workflows:
+  version: 2
+  build-master:
+    jobs:
+      - build:
+         filters:
+           branches:
+             only: master
+      - publish-latest:
+         requires:
+           - build
+         context:
+           - reviews_login
+         filters:
+           branches:
+             only: master
+      - deploy:
+          requires:
+           - publish-latest
+          filters:
+            branches:
+              only: master
