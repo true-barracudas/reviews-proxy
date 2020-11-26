@@ -43,22 +43,22 @@
 module.exports = {
   service1: {
     api: '/products/:id/trackpinch',
-    url: 'http://localhost:3001',
+    url: 'http://trackpinch:3001/',
     bundle: '/dist/bundle.js',
   },
   service2: {
     api: '/products/:id/sizepicker',
-    url: 'http://localhost:3002',
+    url: 'http://sizepicker:3002/',
     bundle: 'bundle.js',
   },
   service3: {
     api: '/products/:id/suggestions',
-    url: 'http://localhost:3003',
+    url: 'http://suggestions:3003/',
     bundle: 'bundle.js',
   },
   service4: {
     api: '/products/:id/reviews',
-    url: 'http://localhost:3004',
+    url: 'http://reviews:3004/',
     bundle: 'bundle.js',
   },
 };
