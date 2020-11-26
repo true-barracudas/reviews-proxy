@@ -49,7 +49,7 @@ jobs:
       - run:
           name: Deploy over SSH
           command: |
-            scp /tmp/workspace/docker-compose.yml ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com:/
+            scp /tmp/workspace/docker-compose.yml ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com:/home/ubuntu/docker-compose.yml
       - run:
           name: Deploy over SSH
           command: |
