@@ -32,7 +32,7 @@ services:
       - '3003:3003'
 
   reviewsproxy:
-    build: .
+    image: meekoder/proxy:latest
     depends_on:
       - 'database'
     ports: 

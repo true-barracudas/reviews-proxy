@@ -47,7 +47,7 @@ jobs:
           fingerprints:
             - 36:f7:82:49:ac:f6:80:da:d7:af:9b:32:be:2d:b8:3b
       - run:
-          name: Deploy over SSH
+          name: Copy
           command: |
             scp /tmp/workspace/docker-compose.yml ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com:/home/ubuntu/docker-compose.yml
       - run:
