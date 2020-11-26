@@ -49,11 +49,12 @@ jobs:
       - run:
           name: Copy
           command: |
-            scp /tmp/workspace/docker-compose.yml ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com:/home/ubuntu/docker-compose.yml
+            scp /tmp/workspace/docker-compose.yml ubuntu@ec2-54-176-33-158.us-west-1.compute.amazonaws.com:/home/ubuntu/docker-compose.yml
       - run:
           name: Deploy over SSH
           command: |
-            ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com bash -c '\
+            ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-176-33-158.us-west-1.compute.amazonaws.com bash -c '\
+            docker-compose down --rmi all -v
             docker-compose pull
             docker-compose up -d'
 workflows:
