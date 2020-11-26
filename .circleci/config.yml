@@ -49,12 +49,11 @@ jobs:
       - run:
           name: Deploy over SSH
           command: |
-            ls /tmp/workspace
+            scp /tmp/workspace/docker-compose.yml ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com:/
       - run:
           name: Deploy over SSH
           command: |
             ssh -o StrictHostKeyChecking=no ubuntu@ec2-54-153-81-188.us-west-1.compute.amazonaws.com bash -c '\
-            cd FEC
             docker-compose down --rmi all -v
             docker-compose pull
             docker-compose up -d'
