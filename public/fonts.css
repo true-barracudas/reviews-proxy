@@ -29,3 +29,11 @@
   font-weight: bold;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "adineue pro bold web";
+  src: url("./fonts/adineuePRO-Bold.woff") format("woff"),
+    url("./fonts/adineuePRO-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
