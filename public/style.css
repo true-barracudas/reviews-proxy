@@ -2,7 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 450px;
+}
+
+.main-content {
+  display: flex;
+}
+
+#TrackPinch {
+  width: 100%;
 }
 
 .row {
@@ -33,16 +40,4 @@
   font-family: "AdihausDIN";
   font-size: 14px;
   margin-left: 18px;
-}
-
-#TrackPinch {
-  margin-right: 450px;
-}
-
-#SizePicker {
-  position: fixed;
-  background-color: white;
-  top: 0;
-  right: 0;
-  z-index: 100;
 }
