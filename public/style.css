@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.main-content {
+  display: flex;
+}
+
+#TrackPinch {
   margin-right: 450px;
 }
 
@@ -33,8 +40,4 @@
   font-family: "AdihausDIN";
   font-size: 14px;
   margin-left: 18px;
-}
-
-#TrackPinch {
-  margin-right: 450px;
 }
