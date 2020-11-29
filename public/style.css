@@ -38,11 +38,3 @@
 #TrackPinch {
   margin-right: 450px;
 }
-
-#SizePicker {
-  position: fixed;
-  background-color: white;
-  top: 0;
-  right: 0;
-  z-index: 100;
-}
