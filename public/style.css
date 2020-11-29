@@ -5,6 +5,36 @@
   margin-right: 450px;
 }
 
+.row {
+  display: flex;
+}
+
+.title {
+  font-family: "adinueue pro bold web";
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.subtitles {
+  font-family: "adinueue pro bold web";
+  font-size: 18px;
+}
+
+.details {
+  font-family: "AdihausDIN";
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.spec {
+  font-family: "AdihausDIN";
+  font-size: 14px;
+  margin-left: 18px;
+}
+
 #TrackPinch {
   margin-right: 450px;
 }
