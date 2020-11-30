@@ -15,6 +15,7 @@
 .row {
   display: flex;
   padding-left: 60px;
+  width: calc(50% - 15px);
 }
 
 .title {
@@ -35,6 +36,12 @@
   font-size: 16px;
   line-height: 22px;
   margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.italicSub {
+  font-family: "AdihausDIN-Cn";
+  font-style: italic;
 }
 
 .spec {
