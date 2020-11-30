@@ -28,6 +28,7 @@
 
 .row {
   display: flex;
+  justify-content: flex-start;
   padding-left: 60px;
   padding-right: 60px;
   margin: 0;
