@@ -12,6 +12,10 @@
   width: 100%;
 }
 
+#Suggestions {
+  transform: scale(0.8);
+}
+
 .highlights {
   display: flex;
   flex-direction: column;
