@@ -12,6 +12,12 @@
   width: 100%;
 }
 
+.highlights {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .row {
   display: flex;
   padding-left: 60px;
