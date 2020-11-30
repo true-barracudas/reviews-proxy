@@ -15,8 +15,12 @@
 .highlights {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   width: 100%;
+}
+
+.textAlign {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .row {
