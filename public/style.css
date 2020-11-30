@@ -15,6 +15,7 @@
 .row {
   display: flex;
   padding-left: 60px;
+  padding-right: 60px;
   width: calc(50% - 15px);
 }
 
