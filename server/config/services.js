@@ -57,7 +57,7 @@ module.exports = {
     bundle: 'bundle.js',
   },
   service4: {
-    api: '/products/:id/reviews/*',
+    api: '/products/:id/reviews/',
     url: 'http://reviews:3004/',
     bundle: 'bundle.js',
   },
