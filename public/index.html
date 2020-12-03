@@ -230,32 +230,6 @@
 
         changeLinkState();
         window.addEventListener("scroll", changeLinkState);
-        // (function () {
-        //   console.clear();
-        //   const callback = (entries, observer) => {
-        //     entries.forEach((entry) => {
-        //       const navItem = document.querySelector(
-        //         "#" + entry.target.id + "Nav"
-        //       );
-        //       if (entry.isIntersecting && navItem !== null) {
-        //         console.log(navItem.getAttribute("id"));
-        //         navItem.classList.add("navbar-active");
-        //       } else if (navItem !== null) {
-        //         navItem.classList.remove("navbar-active");
-        //       }
-        //     });
-        //   };
-        //   const options = {
-        //     threshold: 0.5,
-        //   };
-        //   const observer = new IntersectionObserver(callback, options);
-        //   const container = document.getElementById("main");
-        //   const targetElements = container.querySelectorAll("div");
-
-        //   targetElements.forEach((element) => {
-        //     observer.observe(element);
-        //   });
-        // })();
       })();
     </script>
   </body>
